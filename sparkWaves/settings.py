@@ -42,8 +42,8 @@ if LIVEHOST == False:
     DEBUG = True
     TEMPLATE_DEBUG = True
 else:
-    DEBUG = False
-    TEMPLATE_DEBUG = False
+    DEBUG = True
+    TEMPLATE_DEBUG = True
 
 
 ALLOWED_HOSTS = ['sparkWaves-env-apg22ebmpm.elasticbeanstalk.com']
@@ -150,18 +150,6 @@ STATIC_URL = '/static/'
 
 FIXTURE_DIRS = (os.path.join(BASE_DIR, 'fixtures'),)
 
-UPLOADED_FILES_USE_URL = True
-
-
-if LIVEHOST:
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-    AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
-    AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
-    AWS_STORAGE_BUCKET_NAME = 'elasticbeanstalk-us-east-1-601428295919'
-    AWS_QUERYSTRING_AUTH = False
-else:
-    MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'media')
-    MEDIA_URL = 'http://localhost:8002/media/'
 
 # Rest framework settings
 
