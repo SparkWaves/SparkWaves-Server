@@ -1,5 +1,5 @@
 from lessons.models import Lesson, LessonResource, LessonProject
-from lessons.serializers import LessonResourceSerializer, LessonProjectSerializer, LessonSerializer
+from lessons.serializers import LessonResourceSerializer, LessonProjectSerializer, LessonSerializer, LessonShallowSerializer
 from lessons.permissions import IsStaffOrReadOnly
 from rest_framework import generics
 from django.shortcuts import get_object_or_404
@@ -9,7 +9,7 @@ from django.template.defaultfilters import slugify
 
 class LessonList(generics.ListCreateAPIView):
     queryset = Lesson.objects.all()
-    serializer_class = LessonSerializer
+    serializer_class = LessonShallowSerializer
     permission_classes = (IsStaffOrReadOnly,)
 
 class LessonDetail(generics.RetrieveUpdateDestroyAPIView):

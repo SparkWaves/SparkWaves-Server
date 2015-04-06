@@ -14,7 +14,7 @@ class LessonProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = LessonProject
         fields = ('id', 'title', 'url', 'description', 'image')
-        
+
 class LessonSerializer(serializers.ModelSerializer):
     resources = LessonResourceSerializer(many=True, read_only=True)
     projects = LessonProjectSerializer(many=True, read_only=True)
@@ -22,3 +22,9 @@ class LessonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lesson
         fields = ('id', 'title', 'description', 'overview', 'resources', 'projects')
+
+class LessonShallowSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Lesson
+        fields = ('id', 'title', 'description', 'image')
