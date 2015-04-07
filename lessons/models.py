@@ -2,7 +2,6 @@ from django.db import models
 
 class Lesson(models.Model):
     title = models.CharField(max_length=100)
-    description = models.CharField(max_length=1000, blank=True, null=True)
     overview = models.CharField(max_length=10000, blank=True, null=True)
     image = models.URLField(blank=True, null=True)
 

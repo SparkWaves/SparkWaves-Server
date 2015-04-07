@@ -21,10 +21,10 @@ class LessonSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Lesson
-        fields = ('id', 'title', 'description', 'overview', 'resources', 'projects')
+        fields = ('id', 'title', 'image', 'overview', 'resources', 'projects')
 
 class LessonShallowSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Lesson
-        fields = ('id', 'title', 'description', 'image')
+        fields = ('id', 'title', 'image', 'overview')

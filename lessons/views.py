@@ -5,12 +5,11 @@ from rest_framework import generics
 from django.shortcuts import get_object_or_404
 from django.template.defaultfilters import slugify
 
-
-
 class LessonList(generics.ListCreateAPIView):
     queryset = Lesson.objects.all()
     serializer_class = LessonShallowSerializer
     permission_classes = (IsStaffOrReadOnly,)
+    paginate_by = 100
 
 class LessonDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = LessonSerializer
