@@ -42,11 +42,11 @@ if LIVEHOST == False:
     DEBUG = True
     TEMPLATE_DEBUG = True
 else:
-    DEBUG = True
-    TEMPLATE_DEBUG = True
+    DEBUG = False
+    TEMPLATE_DEBUG = False
 
 
-ALLOWED_HOSTS = ['sparkWaves-env-apg22ebmpm.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['sparkwaves-env-q7g3pzats8.elasticbeanstalk.com']
 
 SITE_ID = 1
 
